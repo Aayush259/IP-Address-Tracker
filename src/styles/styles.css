@@ -6,9 +6,10 @@
 }
 
 :root{
-    --Very-Dark-Gray:hsl(0, 0%, 17%);
-    --Dark-Gray:hsl(0, 0%, 59%);
-    --White:hsl(0, 100%, 100%);
+    --Very-Dark-Gray:hsl(0,0%,17%);
+    --Dark-Gray:hsl(0,0%,59%);
+    --White:hsl(0,100%,100%);
+    --Black:hsl(0,0%,0%);
 }
 
 .flex{
@@ -16,6 +17,14 @@
     flex-direction:row;
     justify-content:center;
     align-items:center;
+}
+
+.bold-500{
+    font-weight:500;
+}
+
+.bold-700{
+    font-weight:700;
 }
 
 #patternBackground{
@@ -57,10 +66,48 @@ label{
 
 #ipSearchBtn{
     border:none;
-    background-color:var(--Very-Dark-Gray);
+    background-color:var(--Black);
     width:50px;
     height:50px;
     border-top-right-radius:1rem;
     border-bottom-right-radius:1rem;
     cursor:pointer;
+}
+
+#ipSearchBtn:active,#ipSearchBtn:hover{
+    background-color:var(--Very-Dark-Gray);
+}
+
+#ipDetail{
+    background-color:var(--White);
+    width:75vw;
+    margin: 3rem auto 0 auto;
+    padding:1.5rem;
+    border-radius:1rem;
+    color:var(--Very-Dark-Gray);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+}
+
+#ipDetail>div{
+    padding:0 1rem;
+}
+
+#ipDetail .title{
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--Dark-Gray);
+}
+
+#ipDetail .value{
+    border-right:1px solid var(--Dark-Gray);
+    height:55px;
+    font-size:1.5rem;
+    padding-top:10px;
+}
+
+#ipDetail>div:nth-last-child(1)>.value{
+    border:none;
 }
