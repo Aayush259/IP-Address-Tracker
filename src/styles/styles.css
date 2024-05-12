@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Rubik,sans-serif;
+}
+
+:root{
+    --Very-Dark-Gray:hsl(0, 0%, 17%);
+    --Dark-Gray:hsl(0, 0%, 59%);
+    --White:hsl(0, 100%, 100%);
+}
+
+.flex{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+#patternBackground{
+    height:40vh;
+    background-image:url('../images/pattern-bg-desktop.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+#header>h1{
+    text-align:center;
+    color:var(--White);
+    padding-top:1.5rem;
+}
+
+#search{
+    margin-top:1.5rem;
+}
+
+label{
+    height:50px;
+    width:40vw;
+    background-color:var(--White);
+    border-top-left-radius:1rem;
+    border-bottom-left-radius:1rem;
+    overflow:hidden;
+}
+
+#ipInput{
+    border:none;
+    height:100%;
+    background-color:transparent;
+    color:var(--Very-Dark-Gray);
+    width:100%;
+    font-size:1.1rem;
+    padding:0 1rem;
+    outline:0;
+}
+
+#ipSearchBtn{
+    border:none;
+    background-color:var(--Very-Dark-Gray);
+    width:50px;
+    height:50px;
+    border-top-right-radius:1rem;
+    border-bottom-right-radius:1rem;
+    cursor:pointer;
+}
