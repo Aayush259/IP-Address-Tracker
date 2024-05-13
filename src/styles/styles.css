@@ -82,15 +82,22 @@ label{
     background-color:var(--White);
     width:75vw;
     margin: 3rem auto 0 auto;
-    padding:1.5rem;
     border-radius:1rem;
     color:var(--Very-Dark-Gray);
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(4, 1fr);
+    padding:1.5rem;
+    border-radius:1rem;
     gap:1rem;
+    position:relative;
+    z-index:2;
 }
 
 #ipDetail>div{
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+    width:100%;
+    max-width:260px;
     padding:0 1rem;
 }
 
@@ -99,15 +106,21 @@ label{
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--Dark-Gray);
+    width:100%;
 }
 
 #ipDetail .value{
-    border-right:1px solid var(--Dark-Gray);
-    height:55px;
     font-size:1.5rem;
+    width:100%;
+    min-height:55px;
     padding-top:10px;
 }
 
 #ipDetail>div:nth-last-child(1)>.value{
     border:none;
+}
+
+#map{
+    position:relative;
+    z-index:0;
 }

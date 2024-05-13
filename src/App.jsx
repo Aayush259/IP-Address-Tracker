@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/styles.css";
 import Search from "./components/Search";
 import IpDetail from "./components/IpDetail";
 
 function App() {
 
-  let ipValue = "192.212.174.101";
-  let locationValue = "Brooklyn, NY 1001";
-  let timezoneValue = "UTC -05:00";
-  let ispValue = "SpaceX Starlink";
+  let [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => setData(data))
+    .catch(err => console.log("Error:", err));
+  }, []);
+  
+  console.log(data);
+
+  if (data === null) {
+    return (
+      <>
+      <div id="loaderContainer">
+        <div id="loader">Loading...</div>
+      </div>
+      </>
+    )
+  }
+
+  let ipValue = data.ip;
+  let locationValue = `${data.city}, ${data.region}, ${data.country}`
+  let timezoneValue = data.utc_offset.split('');
+  timezoneValue.splice(-2, 0, ':');
+  timezoneValue = `UTC ${timezoneValue.join('')}`;
+  let ispValue = data.org;
+  let positionValue = [data.latitude, data.longitude];
 
   return (
     <>
