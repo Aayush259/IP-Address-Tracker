@@ -23,7 +23,7 @@ function Search(props) {
             <label htmlFor="ipInput" className="flex">
                 <input type="text" id="ipInput" placeholder="Search for any IP address or domain" onChange={handleChange} />
             </label>
-            <button type="button" id="ipSearchBtn"><img src={ArrowImg} alt="Search for IP" onClick={handleSearchClick} /></button>
+            <button type="button" id="ipSearchBtn" onClick={handleSearchClick}><img src={ArrowImg} alt="Search for IP" /></button>
         </div>
         </>
     )
