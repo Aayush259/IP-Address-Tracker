@@ -45,8 +45,8 @@ function App() {
   // If the data is not fetched yet, then display loader, else update data on screen.
   if (data === null) {
     toReturn = (
-      <div id="loaderContainer">
-        <div id="loader">Loading...</div>
+      <div id="loaderContainer" className="flex">
+        <div id="loader"></div>
       </div>
     )
   } else if (data.reason === "Invalid IP Address") {

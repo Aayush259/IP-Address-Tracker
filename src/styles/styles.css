@@ -124,3 +124,34 @@ label{
     position:relative;
     z-index:0;
 }
+
+#loaderContainer{
+    min-height:60vh;
+    background-color:rgba(211, 211, 211, 0.5);
+}
+
+#loader{
+    height:60px;
+    width:60px;
+    border:6px solid var(--Very-Dark-Gray);
+    border-top-color:#FFF;
+    border-radius:100px;
+    animation:loading 0.7s ease-in-out 0s infinite normal forwards,changeBorderColor 0.7s ease-in-out 0s infinite normal forwards;
+}
+
+@keyframes loading{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+@keyframes changeBorderColor{
+    0%{border-top-color:#FFF;}
+    25%{border-top-color:var(--Very-Dark-Gray);
+        border-left-color:#FFF;}
+    50%{border-left-color:var(--Very-Dark-Gray);
+        border-bottom-color:#FFF;}
+    75%{border-bottom-color:var(--Very-Dark-Gray);
+        border-right-color:#FFF;}
+    100%{border-right-color:var(--Very-Dark-Gray);
+        border-top-color:#FFF;}
+}
