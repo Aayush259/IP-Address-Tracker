@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/styles.css";
 import Search from "./components/Search";
 import IpDetail from "./components/IpDetail";
+import Map from "./components/Map";
 
 function App() {
 
@@ -42,6 +43,9 @@ function App() {
           <Search />
           <IpDetail ipValue={ipValue} locationValue={locationValue} timezoneValue={timezoneValue} ispValue={ispValue} />
         </div>
+      </div>
+      <div id="map">
+        <Map position={positionValue} />
       </div>
     </>
   )
