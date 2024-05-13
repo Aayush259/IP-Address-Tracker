@@ -49,9 +49,21 @@ function App() {
         <div id="loader">Loading...</div>
       </div>
     )
-  } else {
+  } else if (data.reason === "Invalid IP Address") {
+    toReturn = (
+      <>
+        <div id="errorInvalid">
+          Invalid IP Address
+        </div>
+        <div id="map">
+          <Map position={null} />
+        </div>
+      </>
+    )
+  }
+  else {
     ipValue = data.ip;
-    locationValue = `${data.city}, ${data.region}, ${data.country}`
+    locationValue = `${data.city}, ${data.region}, ${data.country}`;
     timezoneValue = data.utc_offset.split('');
     timezoneValue.splice(-2, 0, ':');
     timezoneValue = `UTC ${timezoneValue.join('')}`;
