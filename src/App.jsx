@@ -58,10 +58,14 @@ function App() {
       </div>
     )
   } else if (data.reason === "Invalid IP Address") {
+    ipValue = '😢';
+    locationValue = '😢';
+    timezoneValue = '😢';
+    ispValue = '😢';
     toReturn = (
       <>
-        <div id="errorInvalid">
-          Invalid IP Address
+        <div id="errorInvalid" className="bold-500">
+          Invalid IP Address &#128546;
         </div>
         <div id="map">
           <Map position={null} />
