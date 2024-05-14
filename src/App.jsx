@@ -9,12 +9,20 @@ function App() {
   // Initializing useState to data that will be fetched from API.
   let [data, setData] = useState(null);
 
+  let dataLoader = (
+    <div className="dataLoader flex">
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+    </div>
+  )
+
   // Declaring variables that will be shown up in UI and initializing them with null.
   let toReturn = null;
-  let ipValue = null;
-  let locationValue = null;
-  let timezoneValue = null;
-  let ispValue = null;
+  let ipValue = dataLoader;
+  let locationValue = dataLoader;
+  let timezoneValue = dataLoader;
+  let ispValue = dataLoader;
   let positionValue = null;
 
   // This function set data state with the data fetched from API based on user search

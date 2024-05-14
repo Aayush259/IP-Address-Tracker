@@ -139,6 +139,34 @@ label{
     animation:loading 0.7s ease-in-out 0s infinite normal forwards,changeBorderColor 0.7s ease-in-out 0s infinite normal forwards;
 }
 
+.dataLoader{
+    padding:0.5rem;
+    justify-content:flex-start;
+}
+
+.circle{
+    width:10px;
+    height:10px;
+    margin:5px;
+    border-radius:50%;
+    background:#333;
+    animation:circle 1s infinite;
+}
+
+.circle:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.circle:nth-child(3){
+    animation-delay:0.4s;
+}
+
+@keyframes circle{
+    0%{transform:scale(1); opacity:1;}
+    50%{transform:scale(0); opacity:0;}
+    100%{transform:scale(1); opacity:1;}
+}
+
 @keyframes loading{
     from{transform:rotate(0deg)}
     to{transform:rotate(360deg)}
