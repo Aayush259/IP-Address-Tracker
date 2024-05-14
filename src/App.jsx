@@ -46,7 +46,7 @@ function App() {
     fetch('https://ipapi.co/json/')
     .then(response => response.json())
     .then(data => setData(data))
-    .catch(err => console.log("Error:", err));
+    .catch(err => {console.log("Error:", err); setData('error')});
   }, []);
   
 
@@ -72,8 +72,20 @@ function App() {
         </div>
       </>
     )
-  }
-  else {
+  } else if (data === 'error'){
+    ipValue = '😬';
+    locationValue = '😬';
+    timezoneValue = '😬';
+    ispValue = '😬';
+    toReturn = (
+      <>
+        <div id="errorInvalid" className="bold-500">
+          Something Went Wrong <br />
+          Try refreshing the page 😬 ...
+        </div>
+      </>
+    )
+  } else {
     ipValue = data.ip;
     locationValue = `${data.city}, ${data.region}, ${data.country}`;
     timezoneValue = data.utc_offset.split('');
