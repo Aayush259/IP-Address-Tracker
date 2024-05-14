@@ -94,8 +94,6 @@ label{
 }
 
 #ipDetail>div{
-    word-wrap:break-word;
-    overflow-wrap:break-word;
     width:100%;
     max-width:260px;
     padding:0 1rem;
@@ -192,4 +190,70 @@ label{
         border-right-color:#FFF;}
     100%{border-right-color:var(--Very-Dark-Gray);
         border-top-color:#FFF;}
+}
+
+@media only screen and (max-height:600px){
+    #patternBackground{
+        height:50vh;
+    }
+}
+
+@media only screen and (max-width:1000px){
+    #ipDetail .value{
+        font-size:1rem;
+        padding-top:10px;
+    }
+    #ipDetail .title{
+        font-size:10px;
+    }
+    #ipDetail{
+        background-color:var(--White);
+        width:85vw;
+        gap:1rem;
+    }
+}
+
+@media only screen and (max-width:850px){
+    #ipInput{
+        font-size:0.8rem;
+    }
+    label{
+        width:50vw;
+    }
+}
+
+@media only screen and (max-width:700px){
+    #header>h1{
+        font-size:1.3rem;
+    }
+    label{
+        width:calc(90vw - 50px);
+    }
+    #ipDetail{
+        width:90vw;
+        margin:20px auto 0 auto;
+        grid-template-columns:repeat(1,1fr);
+        justify-items:center;
+    }
+    #ipDetail *{
+        text-align:center;
+        min-width:100%;
+        max-width:100% !important;
+        min-height:auto !important;
+    }
+    #ipDetail>div{
+        padding:0 1rem;
+    }
+    .divider{
+        display:none;
+    }
+    .leaflet-control-zoom {
+        display: none !important;
+    }
+    .dataLoader{
+        justify-content:center !important;
+    }
+    .dataLoader>.circle{
+        min-width:10px !important;
+    }
 }
