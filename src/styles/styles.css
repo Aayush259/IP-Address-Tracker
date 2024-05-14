@@ -257,3 +257,9 @@ label{
         min-width:10px !important;
     }
 }
+
+@media only screen and (max-width:500px){
+    #patternBackground{
+        background-image:url('../images/pattern-bg-mobile.png');
+    }
+}
