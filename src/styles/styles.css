@@ -209,9 +209,29 @@ label{
         border-top-color:#FFF;}
 }
 
-@media only screen and (max-height:600px){
+@media only screen and (max-height:540px){
     #patternBackground{
         height:50vh;
+    }
+}
+
+@media only screen and (max-height:440px){
+    #ipDetail{
+        margin-top:1rem;
+    }
+}
+
+@media only screen and (max-height:340px){
+    #search{
+        margin-top:0.5rem;
+    }
+    #ipDetail{
+        margin-top:0.5rem;
+        padding:0.5rem;
+    }
+    #ipDetail .value{
+        font-size:0.8rem !important;
+        padding-top:5px !important;
     }
 }
 
