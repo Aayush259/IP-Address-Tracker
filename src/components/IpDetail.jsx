@@ -5,21 +5,32 @@ function IpDetail(props) {
     return (
         <>
         <div id="ipDetail">
-            <div id="ipAddress">
-                <p className="title bold-700">IP Address</p>
-                <p className="value bold-500">{props.ipValue}</p>
+            <div id="ipAddress" className="flex">
+                <div>
+                    <div className="title bold-700">IP Address</div>
+                    <div className="value bold-500">{props.ipValue}</div>
+                </div>
+                <div className="divider"></div>
             </div>
-            <div id="location">
-                <p className="title bold-700">Location</p>
-                <p className="value bold-500">{props.locationValue}</p>
+            <div id="location" className="flex">
+                <div>
+                    <div className="title bold-700">Location</div>
+                    <div className="value bold-500">{props.locationValue}</div>
+                </div>
+                <div className="divider"></div>
             </div>
-            <div id="timeZone">
-                <p className="title bold-700">Timezone</p>
-                <p className="value bold-500">{props.timezoneValue}</p>
+            <div id="timeZone" className="flex">
+                <div>
+                    <div className="title bold-700">Timezone</div>
+                    <div className="value bold-500">{props.timezoneValue}</div>
+                </div>
+                <div className="divider"></div>
             </div>
-            <div id="isp">
-                <p className="title bold-700">Isp</p>
-                <p className="value bold-500">{props.ispValue}</p>
+            <div id="isp" className="flex">
+                <div>
+                    <div className="title bold-700">Isp</div>
+                    <div className="value bold-500">{props.ispValue}</div>
+                </div>
             </div>
         </div>
         </>

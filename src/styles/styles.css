@@ -99,6 +99,16 @@ label{
     width:100%;
     max-width:260px;
     padding:0 1rem;
+    align-items:flex-start;
+}
+
+.divider{
+    width:1px;
+    position:relative;
+    left:30px;
+    background-color:var(--Dark-Gray);
+    margin-top:auto;
+    height:90%;
 }
 
 #ipDetail .title{
@@ -113,7 +123,7 @@ label{
     font-size:1.5rem;
     width:100%;
     min-height:55px;
-    padding-top:10px;
+    padding-top:15px;
 }
 
 #ipDetail>div:nth-last-child(1)>.value{
