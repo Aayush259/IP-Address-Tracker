@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from "react";
-import "./styles/styles.css";
-import Search from "./components/Search";
-import IpDetail from "./components/IpDetail";
-import Map from "./components/Map";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import './styles/styles.css';
+import Search from './components/Search';
+import IpDetail from './components/IpDetail';
+import Map from './components/Map';
 
-function App() {
+export default function App() {
 
   // Initializing useState to data that will be fetched from API.
-  let [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
+  // Getting ip from the URL if available.
   const { ip } = useParams();
 
-  let dataLoader = (
-    <div className="dataLoader flex">
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
+  // Data Loader
+  const dataLoader = (
+    <div className='dataLoader flex'>
+      <div className='circle'></div>
+      <div className='circle'></div>
+      <div className='circle'></div>
     </div>
-  )
+  );
 
   // Declaring variables that will be shown up in UI and initializing them with null.
   let toReturn = null;
@@ -41,7 +43,7 @@ function App() {
     fetch(url)
     .then(response => response.json())
     .then(data => setData(data))
-    .catch(err => console.log("Error:", err));
+    .catch(err => console.log('Error:', err));
   }
 
   // Fetching user's IP and location data and updating it in UI.
@@ -53,7 +55,7 @@ function App() {
       fetch('https://ipapi.co/json/')
       .then(response => response.json())
       .then(data => setData(data))
-      .catch(err => {console.log("Error:", err); setData('error')});
+      .catch(err => {console.log('Error:', err); setData('error')});
     }
 
   }, []);
@@ -62,8 +64,8 @@ function App() {
   // If the data is not fetched yet, then display loader, else update data on screen.
   if (data === null) {
     toReturn = (
-      <div id="loaderContainer" className="flex">
-        <div id="loader"></div>
+      <div id='loaderContainer' className='flex'>
+        <div id='loader'></div>
       </div>
     )
   } else if (data.reason === "Invalid IP Address") {
@@ -73,10 +75,10 @@ function App() {
     ispValue = '😢';
     toReturn = (
       <>
-        <div id="errorInvalid" className="bold-500">
+        <div id='errorInvalid' className='bold-500'>
           Invalid IP Address &#128546;
         </div>
-        <div id="map">
+        <div id='map'>
           <Map position={null} />
         </div>
       </>
@@ -88,7 +90,7 @@ function App() {
     ispValue = '😬';
     toReturn = (
       <>
-        <div id="errorInvalid" className="bold-500">
+        <div id='errorInvalid' className='bold-500'>
           Something Went Wrong <br />
           Try refreshing the page 😬 ...
         </div>
@@ -103,23 +105,21 @@ function App() {
     ispValue = data.org;
     positionValue = [data.latitude, data.longitude];
 
-    toReturn = (<div id="map">
+    toReturn = (<div id='map'>
         <Map position={positionValue} />
      </div>)
-  }
+  };
 
   return (
     <>
-      <div id="app">
-        <div id="patternBackground">
-          <header id="header"><h1 className="bold-500">IP Address Tracker</h1></header>
+      <div id='app'>
+        <div id='patternBackground'>
+          <header id='header'><h1 className='bold-500'>IP Address Tracker</h1></header>
           <Search searchIP={searchIP} />
           <IpDetail ipValue={ipValue} locationValue={locationValue} timezoneValue={timezoneValue} ispValue={ispValue} />
         </div>
       </div>
       {toReturn}
     </>
-  )
-}
-
-export default App;
+  );
+};

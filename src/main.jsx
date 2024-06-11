@@ -8,10 +8,11 @@ const router = createBrowserRouter(
         <Route path='' element={<App />}>
             <Route path='/' element={<App />} />
             <Route path='ip/:ip' element={<App />} />
+            <Route path='ip' element={<App />} />
         </Route>
     )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
-)
+);
