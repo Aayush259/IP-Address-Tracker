@@ -26,6 +26,11 @@ export default function Search() {
                     onChange={(e) => {
                         setInputValue(e.target.value)
                     }} 
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            handleSearchClick();
+                        }
+                    }}
                 />
             </label>
 
