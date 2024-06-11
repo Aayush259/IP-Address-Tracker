@@ -1,20 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 import ArrowImg from '../images/icon-arrow.svg';
+import { useNavigate } from 'react-router-dom';
 
-export default function Search(props) {
+export default function Search() {
+
+    const navigate = useNavigate();
 
     // Initializng inputValue state (User Input Value) with empty string.
     let [inputValue, setInputValue] = useState('');
 
-    // This function set the inputValue to the user's input.
-    const handleChange = (e) => {
-        setInputValue(e.target.value);
-    }
-
     // This functions searches for the IP that the user has input.
     const handleSearchClick = () => {
-        props.searchIP(inputValue)
+        navigate(`/ip/${inputValue}`);
     }
 
     return (
@@ -25,7 +23,9 @@ export default function Search(props) {
                     type='text' 
                     id='ipInput' 
                     placeholder='Search for any IP address or domain' 
-                    onChange={handleChange} 
+                    onChange={(e) => {
+                        setInputValue(e.target.value)
+                    }} 
                 />
             </label>
 

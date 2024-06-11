@@ -58,7 +58,7 @@ export default function App() {
       .catch(err => {console.log('Error:', err); setData('error')});
     }
 
-  }, []);
+  }, [ip]);
   
 
   // If the data is not fetched yet, then display loader, else update data on screen.
@@ -114,9 +114,17 @@ export default function App() {
     <>
       <div id='app'>
         <div id='patternBackground'>
-          <header id='header'><h1 className='bold-500'>IP Address Tracker</h1></header>
-          <Search searchIP={searchIP} />
-          <IpDetail ipValue={ipValue} locationValue={locationValue} timezoneValue={timezoneValue} ispValue={ispValue} />
+          <header id='header'>
+            <h1 className='bold-500'>IP Address Tracker</h1>
+          </header>
+
+          <Search />
+          <IpDetail 
+            ipValue={ipValue} 
+            locationValue={locationValue} 
+            timezoneValue={timezoneValue} 
+            ispValue={ispValue} 
+          />
         </div>
       </div>
       {toReturn}
