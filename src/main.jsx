@@ -5,10 +5,10 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path='' element={<App />}>
-            <Route path='/' element={<App />} />
-            <Route path='ip/:ip' element={<App />} />
-            <Route path='ip' element={<App />} />
+        <Route path='/IP-Address-Tracker/' element={<App />}>
+            <Route path='/IP-Address-Tracker/' element={<App />} />
+            <Route path='/IP-Address-Tracker/ip/:ip' element={<App />} />
+            <Route path='/IP-Address-Tracker/ip' element={<App />} />
         </Route>
     )
 );

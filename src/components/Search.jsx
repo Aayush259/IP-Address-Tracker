@@ -12,7 +12,7 @@ export default function Search() {
 
     // This functions searches for the IP that the user has input.
     const handleSearchClick = () => {
-        navigate(`/ip/${inputValue}`);
+        navigate(`/IP-Address-Tracker/ip/${inputValue}`);
     }
 
     return (
