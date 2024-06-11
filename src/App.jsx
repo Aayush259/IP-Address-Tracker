@@ -3,11 +3,14 @@ import "./styles/styles.css";
 import Search from "./components/Search";
 import IpDetail from "./components/IpDetail";
 import Map from "./components/Map";
+import { useParams } from "react-router-dom";
 
 function App() {
 
   // Initializing useState to data that will be fetched from API.
   let [data, setData] = useState(null);
+
+  const { ip } = useParams();
 
   let dataLoader = (
     <div className="dataLoader flex">
@@ -43,10 +46,16 @@ function App() {
 
   // Fetching user's IP and location data and updating it in UI.
   useEffect(() => {
-    fetch('https://ipapi.co/json/')
-    .then(response => response.json())
-    .then(data => setData(data))
-    .catch(err => {console.log("Error:", err); setData('error')});
+
+    if (ip) {
+      searchIP(ip);
+    } else {
+      fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(err => {console.log("Error:", err); setData('error')});
+    }
+
   }, []);
   
 
